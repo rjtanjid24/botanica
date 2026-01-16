@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>বোটানিকা | Botanica - Educational Game</title>
+    <title>বোটানিকা | Botanica</title>
     
     <meta name="author" content="Tanjid Shuvro">
+    <meta name="theme-color" content="#2e7d32">
+    <meta name="title" content="বোটানিকা (Botanica) | উদ্ভিদবিজ্ঞানের মজার গেম">
+    <meta name="description" content="বোটানিকা (Botanica) - উদ্ভিদবিজ্ঞানের শব্দ নিয়ে তৈরি একটি শিক্ষামূলক বাংলা শব্দজট গেম। শব্দ সাজান, জ্ঞান বাড়ান এবং চ্যাম্পিয়ন হোন! Developed by Tanjid Shuvro.">
+    <meta name="keywords" content="Botanica, বোটানিকা, Bangla Game, Botany Game, Word Puzzle, Educational Game, শব্দজট, উদ্ভিদবিজ্ঞান, Tanjid Shuvro, Bengali Word Game">
+    <meta name="author" content="Tanjid Shuvro">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rjtanjid24.github.io/botanica/">
+    <meta property="og:title" content="বোটানিকা (Botanica) | Play with Nature, Grow with Knowledge">
+    <meta property="og:description" content="উদ্ভিদবিজ্ঞানের শব্দ নিয়ে তৈরি বাংলা গেম। খেলুন, শিখুন এবং নিজের সার্টিফিকেট তৈরি করুন!">
+    <meta property="og:image" content="https://rjtanjid24.github.io/botanica/preview.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://rjtanjid24.github.io/botanica/">
+    <meta property="twitter:title" content="বোটানিকা (Botanica) | উদ্ভিদবিজ্ঞানের মজার গেম">
+    <meta property="twitter:description" content="উদ্ভিদবিজ্ঞানের শব্দ নিয়ে তৈরি বাংলা গেম। খেলুন, শিখুন এবং নিজের সার্টিফিকেট তৈরি করুন!">
+    <meta property="twitter:image" content="https://rjtanjid24.github.io/botanica/preview.png">
+
     <meta name="theme-color" content="#2e7d32">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -213,6 +232,13 @@
         .modal-icon { font-size: 3.5rem; margin-bottom: 10px; display: block; }
         .modal-title { font-size: 1.6rem; font-weight: 700; color: var(--primary); margin-bottom: 5px; }
         
+        /* Special Final Modal Style */
+        .modal-card.final-stage {
+            border: 4px solid #FFD700;
+            background: linear-gradient(to bottom, #fff, #fffde7);
+        }
+        .final-stage .modal-title { color: #f57f17; }
+
         .modal-info-box {
             background: #f1f8e9; padding: 15px; border-radius: 12px; margin: 15px 0;
             border-left: 4px solid var(--accent); text-align: left;
@@ -257,7 +283,7 @@
     
     <svg style="display: none;">
         <symbol id="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></symbol>
-        <symbol id="icon-time" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-8 8 3.58 8 8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></symbol>
+        <symbol id="icon-time" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-8 8 3.58 8 8-8 8 3.58 8 8-8 8 3.58 8 8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></symbol>
         <symbol id="icon-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></symbol>
         <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></symbol>
         <symbol id="icon-check" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></symbol>
@@ -265,11 +291,12 @@
         <symbol id="icon-fb" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.791-4.647 4.535-4.647 1.314 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></symbol>
         <symbol id="icon-next" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></symbol>
         <symbol id="icon-door" viewBox="0 0 24 24"><path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5a2 2 0 0 0-2 2v4h2V5h14v14H5v-4H3v4a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></symbol>
+        <symbol id="icon-trophy" viewBox="0 0 24 24"><path d="M20.2 2H3.8c-1.1 0-2 .9-2 2s.9 2 2 2h.2c-.2.6-.2 1.3-.2 2 0 4.4 3.6 8 8 8s8-3.6 8-8c0-.7 0-1.4-.2-2h.2c1.1 0 2-.9 2-2s-.9-2-2-2zM12 14c-3.3 0-6-2.7-6-6V4h12v4c0 3.3-2.7 6-6 6z"/><path d="M5 20h14v2H5z"/></symbol>
     </svg>
 
     <div id="home-screen" class="fade-in">
         <div class="logo-icon">🌿</div>
-        <div class="edition-badge" style="color:var(--primary); font-weight:600; margin-bottom:10px;">Botanica Edition</div>
+        <div class="edition-badge" style="color:var(--primary); font-weight:600; margin-bottom:10px;">Botanica</div>
         <h1>বোটানিকা</h1>
         <div class="tagline">Play with Nature, Grow with Knowledge</div>
         
@@ -335,7 +362,7 @@
     </div>
 
     <div id="modal-overlay" class="modal-overlay">
-        <div class="modal-card">
+        <div class="modal-card" id="modal-card-main">
             <span class="modal-icon" id="modal-icon">🎉</span>
             <h2 class="modal-title" id="modal-title">শিরোনাম</h2>
             
@@ -373,16 +400,15 @@
 
 <script>
     /**
-     * BOTANICA v2.2 - Fixed Level Transition & Huge Word Bank
+     * BOTANICA v2.2 - REFACTORED
      */
 
     const socialLink = "https://facebook.com/t1nj94";
     const googleScriptURL = "https://script.google.com/macros/s/AKfycby5gIlmrrVBB4o0WgzbgWljRkIh0ioPE7_0xfqap_uwc48ijNh9e1--TQzFwsL7pc99sw/exec"; 
 
-    // --- EXPANDED WORD BANK ---
-    // Contains ~100+ unique words categorized by difficulty
+    // --- CURATED WORD BANK (Strictly 3+ Tiles for L1) ---
     const wordDatabase = {
-        // Level 1: Common/Basic (3-4 characters)
+        // Level 1: 3-4 Tiles/Graphemes
         1: [
             { word: "উদ্ভিদ", hint: "যাদের প্রাণ আছে কিন্তু নড়তে পারে না", info: "উদ্ভিদ সালোকসংশ্লেষণ প্রক্রিয়ায় নিজের খাদ্য নিজেই তৈরি করতে পারে।" },
             { word: "অক্সিজেন", hint: "গাছ আমাদের যা দেয়", info: "এটি মানুষের শ্বাস-প্রশ্বাসের জন্য অপরিহার্য, যা উদ্ভিদ ত্যাগ করে।" },
@@ -394,26 +420,14 @@
             { word: "পলাশ", hint: "বসন্তের লাল ফুল", info: "পলাশ ফুলকে 'অরণ্যের অগ্নি' বলা হয়।" },
             { word: "আগাছা", hint: "ফসলের ক্ষেতে অপ্রয়োজনীয় উদ্ভিদ", info: "আগাছা মূল ফসলের পুষ্টি কেড়ে নেয়।" },
             { word: "অরণ্য", hint: "বন বা জঙ্গল", info: "পৃথিবীর ফুসফুস হলো অরণ্য, যা পরিবেশের ভারসাম্য রক্ষা করে।" },
-            { word: "কমল", hint: "পদ্ম ফুল", info: "পদ্ম জলজ উদ্ভিদ এবং এটি দেখতে খুব সুন্দর।" },
-            { word: "কান্ড", hint: "গাছের প্রধান অংশ যা ডালপালা ধরে রাখে", info: "কান্ড মূল থেকে পাতায় পানি ও খনিজ পরিবহন করে।" },
-            { word: "পাতা", hint: "গাছের রান্নাঘর", info: "পাতায় সালোকসংশ্লেষণ প্রক্রিয়ায় খাদ্য তৈরি হয়।" },
-            { word: "বীজ", hint: "নতুন চারা জন্মানোর মাধ্যম", info: "বীজের ভেতরে সুপ্ত অবস্থায় ভ্রূণ থাকে।" },
-            { word: "ফল", hint: "নিষেক এর পর গর্ভাশয় যা তে পরিণত হয়", info: "ফল বীজকে রক্ষা করে এবং বংশবিস্তারে সাহায্য করে।" },
-            { word: "মূল", hint: "মাটির নিচে থাকা গাছের অংশ", info: "মূল গাছকে মাটির সাথে শক্তভাবে আটকে রাখে।" },
-            { word: "ফুল", hint: "গাছের প্রজনন অঙ্গ", info: "ফুল থেকে ফল ও বীজ হয়।" },
-            { word: "বৃক্ষ", hint: "বড় ও শক্ত কান্ডযুক্ত গাছ", info: "বট, আম, কাঁঠাল হলো বৃক্ষ জাতীয় উদ্ভিদ।" },
-            { word: "গুল্ম", hint: "মাঝারি আকারের ঝোপালো গাছ", info: "গোলাপ, জবা হলো গুল্ম জাতীয় উদ্ভিদ।" },
-            { word: "লতা", hint: "কোনো অবলম্বনকে আঁকড়ে ধরে বেড়ে ওঠে", info: "লাউ, কুমড়া হলো লতানো উদ্ভিদ।" },
-            { word: "ধান", hint: "আমাদের প্রধান খাদ্যশস্য", info: "ধান একবীজপত্রী উদ্ভিদ এবং এর বৈজ্ঞানিক নাম Oryza sativa।" },
-            { word: "গম", hint: "রুটি তৈরির প্রধান উপাদান", info: "গম একটি গুরুত্বপূর্ণ খাদ্যশস্য।" },
-            { word: "পাট", hint: "সোনালী আঁশ", info: "পাট বাস্ট ফাইবার বা কান্ড থেকে প্রাপ্ত আঁশ।" },
-            { word: "বাঁশ", hint: "সবচেয়ে দ্রুত বর্ধনশীল ঘাস", info: "বাঁশ আসলে এক প্রকার ঘাস জাতীয় উদ্ভিদ।" },
-            { word: "শৈবাল", hint: "পানিতে জন্মানো সবুজ উদ্ভিদ", info: "শৈবাল সালোকসংশ্লেষণে সক্ষম কিন্তু এদের মূল, কান্ড, পাতা নেই।" },
-            { word: "ছত্রাক", hint: "ক্লোরোফিলবিহীন উদ্ভিদ", info: "এরা মৃতভোজী বা পরজীবী, যেমন মাশরুম।" },
-            { word: "ফার্ন", hint: "অপুষ্পক উদ্ভিদ", info: "এরা স্যাঁতসেঁতে জায়গায় জন্মে এবং এদের পাতা কুন্ডলীত থাকে।" },
-            { word: "মস", hint: "দেয়ালে বা ভেজা মাটিতে জন্মানো ছোট উদ্ভিদ", info: "এরা ব্রায়োফাইট জাতীয় উদ্ভিদ।" },
-            { word: "লিচু", hint: "গ্রীষ্মকালীন রসালো ফল", info: "লিচুর ভক্ষ্য অংশ হলো এরিল।" },
-            { word: "আম", hint: "ফলের রাজা", info: "আমের বৈজ্ঞানিক নাম Mangifera indica।" }
+            { word: "শাপলা", hint: "জাতীয় ফুল", info: "শাপলা জলজ উদ্ভিদ এবং এটি বাংলাদেশের জাতীয় ফুল।" },
+            { word: "পাপড়ি", hint: "ফুলের রঙিন অংশ", info: "পাপড়ির রঙ ও গন্ধ কীটপতঙ্গকে আকর্ষণ করে।" },
+            { word: "বাকল", hint: "গাছের গায়ের চামড়া", info: "বাকল কান্ডকে বাইরের আঘাত ও রোগজীবাণু থেকে রক্ষা করে।" },
+            { word: "টিউলিপ", hint: "একটি সুন্দর শীতকালীন ফুল", info: "টিউলিপ নেদারল্যান্ডসের জাতীয় ফুল।" },
+            { word: "ক্যাকটাস", hint: "মরুভূমির কাঁটাযুক্ত গাছ", info: "এরা শরীরে পানি জমিয়ে রাখে।" },
+            { word: "পুদিনা", hint: "সুগন্ধি পাতা", info: "পুদিনা পাতা ওষুধি হিসেবে এবং খাবারের স্বাদ বাড়াতে ব্যবহার হয়।" },
+            { word: "তুলসী", hint: "একটি ওষুধি গাছ", info: "সর্দি-কাশিতে তুলসী পাতার রস খুব উপকারী।" },
+            { word: "করলা", hint: "তেতো স্বাদের সবজি", info: "করলা ডায়াবেটিস রোগীদের জন্য উপকারী।" }
         ],
         // Level 2: Scientific/Anatomy (5-6 characters)
         2: [
@@ -428,21 +442,9 @@
             { word: "স্পোরোফাইট", hint: "রেনুধর উদ্ভিদ", info: "ফার্ন জাতীয় উদ্ভিদের জীবনচক্রে স্পোরোফাইট দশা প্রধান।" },
             { word: "পরাগধানী", hint: "যেখানে পরাগরেণু তৈরি হয়", info: "পুংকেশরের মাথায় থলির মতো অংশটিই পরাগধানী।" },
             { word: "গর্ভাশয়", hint: "ফুলের স্ত্রীস্তবকের গোড়ার অংশ", info: "নিষেকের পর গর্ভাশয় ফলে পরিণত হয়।" },
-            { word: "বৃতি", hint: "ফুলের বাইরের সবুজ অংশ", info: "বৃতি কুঁড়ি অবস্থায় ফুলকে রোদ-বৃষ্টি থেকে রক্ষা করে।" },
-            { word: "দলমন্ডল", hint: "ফুলের পাপড়ির সমষ্টি", info: "রঙিন দলমন্ডল কীটপতঙ্গকে আকৃষ্ট করে পরাগায়নে সাহায্য করে।" },
             { word: "এপিডার্মিস", hint: "উদ্ভিদের বাইরের ত্বক", info: "এটি উদ্ভিদকে বাইরের আঘাত থেকে রক্ষা করে।" },
             { word: "প্যারেনকাইমা", hint: "সরল টিস্যু", info: "এদের কোষ প্রাচীর পাতলা এবং এদের মধ্যে আন্তঃকোষীয় ফাঁক থাকে।" },
-            { word: "কোলেনকাইমা", hint: "যান্ত্রিক শক্তি প্রদানকারী টিস্যু", info: "এদের কোষ প্রাচীর অসমভাবে পুরু হয়।" },
-            { word: "স্ক্লেরেনকাইমা", hint: "মৃত কোষ দিয়ে গঠিত টিস্যু", info: "পাট আঁশ এক ধরনের স্ক্লেরেনকাইমা টিস্যু।" },
-            { word: "মনোকট", hint: "একবীজপত্রী উদ্ভিদ", info: "ধান, গম, ভুট্টা হলো মনোকট বা একবীজপত্রী।" },
-            { word: "ডাইকট", hint: "দ্বিবীজপত্রী উদ্ভিদ", info: "আম, জাম, কাঁঠাল হলো ডাইকট বা দ্বিবীজপত্রী।" },
-            { word: "মঞ্জরীপত্র", hint: "ফুলের গোড়ায় থাকা ছোট পাতা", info: "এর কক্ষে ফুল জন্মায়।" },
-            { word: "পুষ্পপুট", hint: "বৃতি ও দলের ন্যায় অংশ", info: "যখন বৃতি ও দলকে আলাদা করা যায় না (যেমন রজনীগন্ধা)।" },
-            { word: "রাইজোম", hint: "ভূ-নিম্নস্থ কান্ড (যেমন আদা)", info: "এরা মাটির নিচে সমান্তরালভাবে বৃদ্ধি পায়।" },
-            { word: "টিউবার", hint: "স্ফীত কান্ড (যেমন আলু)", info: "খাদ্য সঞ্চয় করে এরা গোলাকার হয়।" },
-            { word: "বাল্ব", hint: "কন্দ (যেমন পেঁয়াজ)", info: "এদের কান্ড অত্যন্ত ছোট এবং রসালো শল্কপত্র থাকে।" },
-            { word: "স্টোলন", hint: "লতানো কান্ড (যেমন কচু)", info: "এরা মাটির উপরে লম্বালম্বিভাবে বৃদ্ধি পায়।" },
-            { word: "অমরাবিন্যাস", hint: "গর্ভাশয়ে ডিম্বকের সাজসজ্জা", info: "এর উপর ভিত্তি করে ফলের বীজ কোথায় থাকবে তা ঠিক হয়।" }
+            { word: "রাইজোম", hint: "ভূ-নিম্নস্থ কান্ড (যেমন আদা)", info: "এরা মাটির নিচে সমান্তরালভাবে বৃদ্ধি পায়।" }
         ],
         // Level 3: Advanced/Process (Hard)
         3: [
@@ -458,19 +460,7 @@
             { word: "ইকোসিস্টেম", hint: "পরিবেশের ভারসাম্য", info: "উৎপাদক ও খাদকের সম্পর্ক।" },
             { word: "মাইটোসিস", hint: "দেহ কোষ বিভাজন", info: "এই বিভাজনে জীবের দৈহিক বৃদ্ধি ঘটে।" },
             { word: "সাইটোকাইনেসিস", hint: "সাইটোপ্লাজমের বিভাজন", info: "নিউক্লিয়াস বিভাজনের পর এটি ঘটে।" },
-            { word: "কেরিওকাইনেসিস", hint: "নিউক্লিয়াসের বিভাজন", info: "কোষ বিভাজনের প্রথম ধাপ।" },
-            { word: "অভিস্রবণ", hint: "তরল পদার্থের চলাচল", info: "কম ঘনত্ব থেকে বেশি ঘনত্বের দিকে দ্রাবক অণু যায়।" },
-            { word: "ব্যাপন", hint: "গ্যাসের ছড়িয়ে পড়া", info: "বেশি ঘনত্ব থেকে কম ঘনত্বের দিকে অণু ছড়িয়ে পড়ে।" },
-            { word: "ইম্বাইবিশন", hint: "শুকনো বস্তুর পানি শোষণ", info: "শুকনো কাঠ বর্ষাকালে ফুলে ওঠার কারণ এটি।" },
-            { word: "গ্লাইকোলাইসিস", hint: "শ্বসনের প্রথম ধাপ", info: "এই ধাপে গ্লুকোজ ভেঙে পাইরুভিক এসিড তৈরি হয়।" },
-            { word: "ক্রেবসচক্র", hint: "শ্বসনের একটি ধাপ", info: "এখানে প্রচুর পরিমাণে শক্তি উৎপন্ন হয়।" },
-            { word: "ফারমেন্টেশন", hint: "অবাধ শ্বসন", info: "অক্সিজেনের অনুপস্থিতিতে এটি ঘটে (যেমন মদ তৈরি)।" },
-            { word: "হাইড্রোফাইট", hint: "জলজ উদ্ভিদ", info: "শাপলা, পদ্ম হলো হাইড্রোফাইট।" },
-            { word: "জেরোফাইট", hint: "মরুজ উদ্ভিদ", info: "ক্যাকটাস হলো জেরোফাইট, যারা অল্প পানিতে জন্মে।" },
-            { word: "হ্যালোফাইট", hint: "লোনা পানির উদ্ভিদ", info: "সুন্দরবনের সুন্দরী, গরান হলো হ্যালোফাইট।" },
-            { word: "এপিফাইট", hint: "পরাশ্রয়ী উদ্ভিদ", info: "এরা অন্য গাছের উপর জন্মে কিন্তু খাদ্য শোষণ করে না (যেমন অর্কিড)।" },
-            { word: "প্যারাসাইট", hint: "পরজীবী উদ্ভিদ", info: "এরা পুষ্টির জন্য পুরোপুরি অন্যের উপর নির্ভরশীল (যেমন স্বর্ণলতা)।" },
-            { word: "সিমবায়োসিস", hint: "মিথোজীবিতা", info: "দুটি জীব একে অপরের সাহায্যে বেঁচে থাকে।" }
+            { word: "অভিস্রবণ", hint: "তরল পদার্থের চলাচল", info: "কম ঘনত্ব থেকে বেশি ঘনত্বের দিকে দ্রাবক অণু যায়।" }
         ]
     };
 
@@ -500,7 +490,7 @@
                 scramble: [],
                 lives: 3,
                 queue: [],
-                usedWords: [], // To track used words in this session
+                usedWords: [], 
                 selIdx: -1,
                 gameComplete: false
             };
@@ -519,16 +509,16 @@
                 preview: document.getElementById('ui-preview'),
                 tiles: document.getElementById('tiles-area'),
                 modal: document.getElementById('modal-overlay'),
+                modalCard: document.getElementById('modal-card-main'),
                 mTitle: document.getElementById('modal-title'),
                 mMsg: document.getElementById('modal-msg'),
                 mInfoArea: document.getElementById('modal-info-area'), 
                 mInfoText: document.getElementById('modal-info-text'), 
                 mIcon: document.getElementById('modal-icon'),
                 
-                // Smart UI Areas
                 smartActions: document.getElementById('smart-action-area'),
                 simpleNextBtn: document.getElementById('simple-next-btn'),
-                btnNextLevel: document.getElementById('btn-next-level'), // Corrected ref
+                btnNextLevel: document.getElementById('btn-next-level'), 
 
                 canvas: document.getElementById('cert-canvas')
             };
@@ -566,7 +556,7 @@
         resetGame() {
             this.state.score = 0;
             this.state.gameComplete = false;
-            this.state.usedWords = []; // Reset used words
+            this.state.usedWords = []; 
             this.updateStatUI();
         }
 
@@ -578,21 +568,16 @@
             const levelKey = parseInt(config.label);
             const pool = [...wordDatabase[levelKey]];
             
-            // SMART SHUFFLE: Filter out already used words
+            // SMART SHUFFLE: Filter used
             const availableWords = pool.filter(w => !this.state.usedWords.includes(w.word));
-            
-            // If we run out of unique words, reuse the pool (fallback)
             const finalPool = availableWords.length >= config.words ? availableWords : pool;
 
-            // Shuffle
             for (let i = finalPool.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
                 [finalPool[i], finalPool[j]] = [finalPool[j], finalPool[i]];
             }
 
             this.state.queue = finalPool.slice(0, config.words);
-            
-            // Add selected words to used list
             this.state.queue.forEach(w => this.state.usedWords.push(w.word));
             
             this.updateStatUI();
@@ -719,14 +704,15 @@
             this.sendDataToSheet();
 
             if (this.state.currLvl < this.levels.length - 1) {
-                const nextLvl = this.state.currLvl + 1;
+                // Not the last level
+                const nextLvlIdx = this.state.currLvl + 1;
                 const msg = `দারুণ ${this.state.userName}!\nলেভেল ${this.levels[this.state.currLvl].label} সম্পন্ন হয়েছে।`;
                 
-                // Show smart actions, hide simple button
                 this.showModal('🌱', 'লেভেল সম্পন্ন!', msg, null, true, () => {
-                    this.startLevel(nextLvl);
+                    this.startLevel(nextLvlIdx);
                 });
             } else {
+                // Game Complete (Final Level)
                 this.gameFinish();
             }
         }
@@ -736,9 +722,13 @@
             this.sendDataToSheet();
 
             const quote = motivationalQuotes[Math.floor(Math.random() * motivationalQuotes.length)];
-            const msg = `প্রিয় ${this.state.userName}, চমৎকার খেলেছেন!\n\n"${quote}"\n\nস্কোর: ${this.state.score}`;
+            const msg = `অভিনন্দন ${this.state.userName}!\nআপনি একজন বোটানিকা চ্যাম্পিয়ন! 🏆\n\n"${quote}"\n\nস্কোর: ${this.state.score}`;
             
-            this.showModal('🌳', 'অভিনন্দন!', msg, null, true, () => {
+            // Special Final Style
+            this.els.modalCard.classList.add('final-stage');
+            this.els.mIcon.innerHTML = '<svg class="icon" style="width:60px;height:60px;color:#ffc107"><use href="#icon-trophy"></use></svg>';
+            
+            this.showModal('চ্যাম্পিয়ন!', 'গেম সম্পন্ন!', msg, null, true, () => {
                 location.reload();
             });
         }
@@ -758,11 +748,8 @@
                 score: this.state.score,
                 level: this.levels[this.state.currLvl].label
             };
-
-            // Using no-cors mode to send data blindly without error
             fetch(googleScriptURL, {
-                method: 'POST',
-                mode: 'no-cors',
+                method: 'POST', mode: 'no-cors',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             }).catch(err => console.log(""));
@@ -771,7 +758,12 @@
         openFacebook() { window.open(socialLink, '_blank'); }
 
         showModal(icon, title, msg, infoText, isEndState, cb) {
-            this.els.mIcon.textContent = icon;
+            // Reset styles
+            if(!this.state.gameComplete) {
+                this.els.modalCard.classList.remove('final-stage');
+                this.els.mIcon.textContent = icon;
+            }
+            
             this.els.mTitle.textContent = title;
             this.els.mMsg.textContent = msg; 
             
@@ -783,21 +775,16 @@
             }
 
             if(isEndState) {
-                // Show Top Row (Download + Next) and Bottom (FB)
                 this.els.smartActions.classList.remove('hidden');
                 this.els.simpleNextBtn.classList.add('hidden');
-                
-                // Assign the specific next level callback to the icon button
+                // Bind Next Logic
                 this.els.btnNextLevel.onclick = () => {
                     this.closeModal();
                     if(cb) cb();
                 };
             } else {
-                // Show Simple Next Button only
                 this.els.smartActions.classList.add('hidden');
                 this.els.simpleNextBtn.classList.remove('hidden');
-                
-                // Assign next word callback
                 this.els.simpleNextBtn.onclick = () => {
                     this.closeModal();
                     if(cb) cb();
@@ -813,28 +800,62 @@
             const canvas = this.els.canvas;
             const ctx = canvas.getContext('2d');
             const w = 1080, h = 1080;
+            
+            // DYNAMIC COLOR THEME based on Level
+            let primaryColor, secondaryColor, accentColor;
+            
+            if (this.state.gameComplete) {
+                // Final Level (Gold/Royal)
+                primaryColor = "#d84315"; // Burnt Orange
+                secondaryColor = "#fff3e0"; // Light Orange
+                accentColor = "#ffc107"; // Gold
+            } else if (this.state.currLvl === 0) {
+                // Level 1 (Green)
+                primaryColor = "#2e7d32"; 
+                secondaryColor = "#e8f5e9";
+                accentColor = "#a5d6a7";
+            } else if (this.state.currLvl === 1) {
+                // Level 2 (Teal)
+                primaryColor = "#00838f"; 
+                secondaryColor = "#e0f7fa";
+                accentColor = "#4dd0e1";
+            } else {
+                // Level 3 playing (Purple)
+                primaryColor = "#6a1b9a"; 
+                secondaryColor = "#f3e5f5";
+                accentColor = "#ce93d8";
+            }
+
+            // Background
             const grd = ctx.createLinearGradient(0, 0, 0, h);
-            grd.addColorStop(0, "#e8f5e9"); grd.addColorStop(1, "#c8e6c9");
+            grd.addColorStop(0, secondaryColor); grd.addColorStop(1, "#ffffff");
             ctx.fillStyle = grd; ctx.fillRect(0, 0, w, h);
 
-            ctx.strokeStyle = "#2e7d32"; ctx.lineWidth = 30; ctx.strokeRect(40, 40, w - 80, h - 80);
-            ctx.strokeStyle = "rgba(46, 125, 50, 0.3)"; ctx.lineWidth = 5; ctx.strokeRect(60, 60, w - 120, h - 120);
+            // Border
+            ctx.strokeStyle = primaryColor; ctx.lineWidth = 30; ctx.strokeRect(40, 40, w - 80, h - 80);
+            ctx.strokeStyle = accentColor; ctx.lineWidth = 5; ctx.strokeRect(60, 60, w - 120, h - 120);
 
-            ctx.fillStyle = "#2e7d32"; ctx.beginPath(); ctx.roundRect(w/2 - 80, 150, 160, 160, 40); ctx.fill();
+            // Logo
+            ctx.fillStyle = primaryColor; ctx.beginPath(); ctx.roundRect(w/2 - 80, 150, 160, 160, 40); ctx.fill();
             ctx.fillStyle = "#FFFFFF"; ctx.font = "bold 100px 'Hind Siliguri'"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText("🌿", w/2, 230);
 
-            ctx.fillStyle = "#1b5e20"; ctx.font = "bold 80px 'Hind Siliguri'"; ctx.textBaseline = "alphabetic"; ctx.fillText("বোটানিকা", w/2, 420);
-            ctx.fillStyle = "#2e7d32"; ctx.font = "500 40px 'Poppins'"; ctx.fillText("Botanica Edition", w/2, 480);
+            // Text
+            ctx.fillStyle = primaryColor; ctx.font = "bold 80px 'Hind Siliguri'"; ctx.textBaseline = "alphabetic"; ctx.fillText("বোটানিকা", w/2, 420);
+            ctx.fillStyle = "#37474f"; ctx.font = "500 40px 'Poppins'"; ctx.fillText("Botanica", w/2, 480);
 
+            // Achievement
             ctx.fillStyle = "#546e7a"; ctx.font = "500 45px 'Hind Siliguri'";
-            const achievementText = this.state.gameComplete ? "গেম সম্পন্ন" : `লেভেল ${this.levels[this.state.currLvl].label} সম্পন্ন`;
+            const achievementText = this.state.gameComplete ? "গেম সম্পন্ন - চ্যাম্পিয়ন!" : `লেভেল ${this.levels[this.state.currLvl].label} সম্পন্ন`;
             ctx.fillText(achievementText, w/2, 560);
 
+            // User
             ctx.fillStyle = "#ff6f00"; ctx.font = "bold 90px 'Hind Siliguri'"; ctx.fillText(this.state.userName, w/2, 700);
 
+            // Score
             ctx.fillStyle = "#1c313a"; ctx.font = "600 50px 'Hind Siliguri'"; ctx.fillText("আপনার স্কোর", w/2, 800);
-            ctx.fillStyle = "#2e7d32"; ctx.font = "bold 100px 'Poppins'"; ctx.fillText(this.state.score, w/2, 910);
+            ctx.fillStyle = primaryColor; ctx.font = "bold 100px 'Poppins'"; ctx.fillText(this.state.score, w/2, 910);
 
+            // Footer
             ctx.fillStyle = "#558b2f"; ctx.font = "italic 30px 'Poppins'"; ctx.fillText("Developed by Tanjid Shuvro", w/2, 1000);
 
             const link = document.createElement('a');
@@ -847,4 +868,3 @@
 </script>
 </body>
 </html>
-
